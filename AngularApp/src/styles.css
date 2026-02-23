@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.material-form{  
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 300px;
+}
+
+.LefMargin{
+    margin-left: 2rem; 
+}
+
+.RightMargin{
+    margin-right: 2rem;
+}
+
+.AddButton{
+    margin-bottom: 1rem;
+}
+
+.Delete{
+    color: #9b1313;
+}
+
+.Edit{
+    color: green;
+}

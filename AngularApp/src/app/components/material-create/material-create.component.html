@@ -1,0 +1,17 @@
+<div class="LefMargin">
+    <h2>Create material</h2>
+</div>
+
+<form class="material-form LefMargin" (ngSubmit)="createMaterial()">
+    <mat-form-field>
+        <mat-label>Material Name</mat-label>
+        <input matInput name="name" [(ngModel)]="material.name" required/>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Material Description</mat-label>
+        <input matInput name="description" [(ngModel)]="material.description" required/>
+    </mat-form-field>
+
+    <button mat-flat-button type="submit">Save</button>
+</form>

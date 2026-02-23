@@ -1,0 +1,37 @@
+<div class="LefMargin">
+    <h2>List of Materials</h2>
+</div>
+
+<button class="AddButton LefMargin" mat-flat-button color="primary" (click)="router.navigate(['/create'])">Add Material</button>
+
+<div class="LefMargin RightMargin">
+    <mat-table #table [dataSource]="materials" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let material"> {{material.id}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let material"> {{material.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+            <mat-cell *matCellDef="let material"> {{material.description}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+            <mat-cell *matCellDef="let material">
+                <button mat-button (click)="editMaterial(material.id)">
+                    <mat-icon class="Edit">edit</mat-icon>
+                </button>
+                <button mat-button (click)="deleteMaterial(material.id)">
+                    <mat-icon class="Delete">delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="['id', 'name', 'description', 'actions']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:['id', 'name', 'description', 'actions']"></mat-row>
+    </mat-table>
+</div>
